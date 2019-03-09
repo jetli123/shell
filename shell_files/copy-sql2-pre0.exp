@@ -1,0 +1,7 @@
+#!/usr/bin/expect -f
+set timeout 30
+
+spawn scp -P 65389 /root/crm_details.sql /root/sales_amount.sql root@10.0.0.1:/root/lilianjie/
+expect "*password:"
+send "mWaitx#blsnHeadkb7\r"
+expect eof
