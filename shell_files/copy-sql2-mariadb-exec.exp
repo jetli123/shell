@@ -1,0 +1,24 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+spawn ssh -p 65389 root@10.0.02
+expect "*password:"
+send "mWaitx#blsnHeadkb7\r"
+expect "*#"
+send "docker cp /root/lilianjie/sales_amount.sql mariadb:/\r"
+expect "*#"
+send "docker cp /root/lilianjie/crm_details.sql mariadb:/\r"
+expect "*#"
+send "docker exec -it mariadb mysql -uroot -p\"2ghlmcl1hblsqt\" -e \"use crm_interface;\" -e \"source /sales_amount.sql;\" -e \"source /crm_details.sql;\"\r"
+expect "*#"
+exec sleep 20
+expect "*#"
+send "docker exec -it mariadb rm -f /sales_amount.sql\r"
+expect "*#"
+send "docker exec -it mariadb rm -f /crm_details.sql\r"
+expect "*#"
+send "rm -f /root/lilianjie/sales_amount.sql\r"
+expect "*#"
+send "rm -f /root/lilianjie/crm_details.sql\r"
+send "exit\r"
+interact
