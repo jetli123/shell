@@ -16,18 +16,6 @@ do
     echo >&1000
 done
 #
-############  close step one, choose below info ##########
-#while [ $begin_date != $end_date ]
-#do
-#    read -u1000
-#    {
-#       echo $begin_date
-#        #mysql -uroot -p"mysql" -hlocalhost  -e "use im30; create table im30_$begin_date select * from omg1;"  >>error.log 2>&1
-#        { mysqldump -uroot -p"mysql" -hlocalhost im30 im30_$begin_date || exit 2; } |pv | mysql -uroot -p"mysql" $3 >>error.log 2>&1
-#        echo >&1000 
-#    } &
-#    begin_date=`date -d "$begin_date +1 days" +"%Y%m%d"`
-#done
 ##########################################################
 while read files
 do
