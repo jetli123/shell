@@ -6,6 +6,9 @@
 #History
 # 2021/06/29
 #
+####################################################
+# use get_ding_sign.py file get dingding 安全认证###
+####################################################
 export PATH=/usr/local/jdk/bin:/usr/sbin:/usr/bin
 export LANG=en_US.utf8
 export LC_TIME=en_US.utf8
